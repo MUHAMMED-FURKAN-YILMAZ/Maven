@@ -65,12 +65,6 @@ public class C02_Test01 {
         //10-Sayfayi kapatin
         driver.close();
 
-        //Collapse
-        //
-        //
-        //
-        //
-        //
-        //Send a message to qa-live-channel
+
     }
 }
