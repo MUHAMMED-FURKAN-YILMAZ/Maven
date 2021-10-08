@@ -40,7 +40,7 @@ public class C04_Test03 {
 
         //8. Sectiginiz urunun basarili olarak sepete eklendigini control edin
         WebElement productSuccess=driver.findElement(By.xpath("//div[@class='cart_list']"));
-        if (productSuccess.isDisplayed()){
+        if (productSuccess.isDisplayed()){ //driver.findElement(By.cssSelector(".cart_quantity")).isEnabled() -> bu daha dogru olabilir
             System.out.println("Test PASS");
         }else {
             System.out.println("Test FAILED");
