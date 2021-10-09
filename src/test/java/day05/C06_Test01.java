@@ -24,8 +24,7 @@ public class C06_Test01 {
         driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
-
-
+    
 
 //2- https://www.amazon.com/ adresine gidin
     @Test
