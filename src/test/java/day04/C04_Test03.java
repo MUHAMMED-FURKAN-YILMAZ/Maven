@@ -30,6 +30,7 @@ public class C04_Test03 {
 
         //5. Ilk urunun ismini kaydedin ve bu urunun sayfasina gidin
         WebElement firstProduct= driver.findElement(By.xpath("(//div[@class='inventory_item_name'])[1]"));
+        String firstElementText = firstProduct.getText();
         firstProduct.click();
 
         //6. Add to Cart butonuna basin
@@ -38,15 +39,24 @@ public class C04_Test03 {
         //7. Alisveris sepetine tiklayin
         driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
 
-        //8. Sectiginiz urunun basarili olarak sepete eklendigini control edin
-        WebElement productSuccess=driver.findElement(By.xpath("//div[@class='cart_list']"));
-        if (productSuccess.isDisplayed()){ //driver.findElement(By.cssSelector(".cart_quantity")).isEnabled() -> bu daha dogru olabilir
-            System.out.println("Test PASS");
-        }else {
-            System.out.println("Test FAILED");
+
+        String theProductAtInventory = driver.findElement(By.cssSelector(".inventory_item_name")).getText();
+
+        if (driver.findElement(By.cssSelector(".cart_quantity")).isEnabled()) {
+            //Sepetteki urunun sepete gonderdigim urun ile ayni olup olmadigini kotnrol etmeden once,
+            // sepete urunu gonderebilmis miyim diye kotrol etmem lazim.
+            if (theProductAtInventory.equalsIgnoreCase(firstElementText)) {
+                System.out.println("The test for 'ADD TO CART' is pass!");
+            } else {
+                System.out.println("The test for 'ADD TO CART' is failed!");
+                System.out.println("The product in the shopping cart is: " + theProductAtInventory);
+            }
+        } else {
+            System.out.println("The test for 'ADD TO CART' is failed!");
+            System.out.println("Product can not be sent to shopping cart!");
         }
 
         //9. Sayfayi kapatin
-        driver.close();
+   //     driver.close();
     }
 }
