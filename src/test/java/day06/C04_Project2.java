@@ -28,7 +28,7 @@ public class C04_Project2 {
 
 
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\Muhammed Furkan Yılm\\Documents\\selenium dependencies\\drivers\\chromedriver.exe");
+                "C:\\Users\\user\\Documents\\selenium dependencies\\drivers\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
 
